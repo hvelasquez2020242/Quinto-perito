@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteTipoCliente" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bc87446b-2ccb-4292-a4bc-39b24223112e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="LOGO_HEADER" class="java.io.InputStream"/>
+	<parameter name="LOGO_FOOTER" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[select *from TipoCliente;]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement x="229" y="0" width="117" height="25" uuid="550333e0-e156-4ce0-b47e-b2562ef19c33"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kinal Mall]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="229" y="37" width="117" height="20" uuid="9b9a7930-7606-49b4-b0af-82e506c4fa20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Telefono: 22160000]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="117" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="110" height="113" uuid="62f38b3b-7a8c-4af5-9297-32d870afb5c6"/>
+				<imageExpression><![CDATA[$P{LOGO_HEADER}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="132" y="17" width="404" height="68" uuid="066b4c9b-fb63-4330-8520-349cad96c152"/>
+				<textElement textAlignment="Center">
+					<font size="28" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE TIPOCLIENTE]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="70" y="0" width="24" height="20" uuid="97471d93-7a53-482f-94d5-f0dc2fe1cf65"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="0" width="100" height="20" uuid="62275404-87b1-43ae-a599-ae40506a94de"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCION]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" uuid="01eb63b9-aad5-4390-9ff7-89716a39cc3b"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#000033"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="51" y="0" width="59" height="20" uuid="cc8c5a74-8c34-456d-b588-87b0af3cf0c9"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="208" y="0" width="276" height="20" uuid="695be71f-ed98-4866-88bc-4845db1bd163"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="134" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="11" width="555" height="1" uuid="9ff618d2-7b37-472a-84b7-15223820aa9e"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#000033"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement x="0" y="22" width="283" height="81" uuid="b84b615f-c3d2-4c24-8947-f5b22d03ed7f"/>
+				<imageExpression><![CDATA[$P{LOGO_FOOTER}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="293" y="25" width="262" height="78" uuid="0f017188-aa68-40c9-82fb-a1b41faaf110"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Hugo Daniel Velasquez Patzan
+hvelasquez-2020242@kinal.edu.gt
+IN5BV]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="208" y="113" width="80" height="20" uuid="05d1cd01-08dd-45b8-abd9-480015486236"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="293" y="114" width="40" height="20" uuid="d0b8fdf8-e2aa-4326-a757-c23c6434d27a"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

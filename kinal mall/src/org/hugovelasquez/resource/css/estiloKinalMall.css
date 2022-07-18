@@ -1,0 +1,33 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13 may. 2021, 15:21:48
+    Author     : Hugo Daniel Velasquez Patzan
+*/
+
+.menu-bar {
+    -fx-background-color: white;
+    -fx-opacity: 0.9;    
+    -fx-border-color: black;
+
+}
+.menu-bar .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: black; 
+    -fx-font-size: 16;
+    -fx-font-family: "Arial";
+    
+}
+.menu-bar   .menu-button:hover{
+    -fx-background-color: gray;
+    
+}
+.menu-bar   .menu-button .label:hover {
+    -fx-text-fill: White;
+}
+.menu-bar   .menu-button .menu-item:hover{
+    -fx-backgroud-color: gray; 
+}
